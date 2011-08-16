@@ -1,29 +1,31 @@
 <!DOCTYPE html> 
 <html> 
 	<head profile="http://dublincore.org/documents/dcq-html/">
-		<title>jQuery mobile with Google maps basic example</title>
+		<title>Spot de Vogel kaart</title>
 		
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
 
-		<script src="http://www.google.com/jsapi?key=ABQIAAAAahcO7noe62FuOIQacCQQ7RTHkUDJMJAZieEeKAqNDtpKxMhoFxQsdtJdv3FJ1dT3WugUNJb7xD-jsQ" type="text/javascript"></script>        
+    	<script type="text/javascript" src="data.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+    	<script src="http://www.google.com/jsapi?key=ABQIAAAAahcO7noe62FuOIQacCQQ7RTHkUDJMJAZieEeKAqNDtpKxMhoFxQsdtJdv3FJ1dT3WugUNJb7xD-jsQ" type="text/javascript"></script>
         <script type="text/javascript">
-			google.load("maps", "3", {'other_params':'sensor=true&libraries=geometry'});
-			google.load("jquery", "1.5");
-		</script>
-		<script type="text/javascript">
-			// Demonstration purpose only...
-			$(document).bind("mobileinit", function () {
-				$.mobile.ajaxEnabled  = true;
-			});
-		</script>
-		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.js"></script>
-		<script type="text/javascript" src="jquery.ui.map.js"></script>
+    		google.load("maps", "3", {'other_params':'sensor=true&libraries=geometry'});
+    		google.load("jquery", "1.6.2");
+    	</script>
+    	<script type="text/javascript">
+    		// Demonstration purpose only...
+    		$(document).bind("mobileinit", function () {
+    			$.mobile.ajaxEnabled  = true;
+    		});
+    	</script>
+    	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+    	<script type="text/javascript" src="jquery.ui.map.js"></script>
 	</head> 
 
 	<body> 
 		<div id="gmap-2" data-role="page">
 			<div data-role="header">
-				<h1><a data-ajax="false" href="/">jQuery mobile with Google maps</a> basics</h1>
+				<h1>De Spot de Vogel kaart</h1>
 			</div>
 			<script type="text/javascript">
 				$('#gmap-2').live("pageshow", function() {
@@ -34,12 +36,19 @@
 											iw.open(map, marker); 
 											map.panTo(marker.getPosition()); 
 									}); 
-								}); 
+								});
 							});
+							
+							jQuery.each(locations, function (id, location) {
+    							$('#map_canvas').gmap('addMarker', {'position': new google.maps.LatLng(location.latitude, location.longitude), 'animation': google.maps.Animation.DROP, 'title': location.name}).click(function () {
+        							$.mobile.changePage("location.html?location=" + id)
+    							});
+							})
 						}
 					});
 					function getLatLng() {
 						if ( google.loader.ClientLocation != null ) {
+// example of calculating the distance between the user's location and Stockholm, in meters
 console.log(
 	google.maps.geometry.spherical.computeDistanceBetween(
 		new google.maps.LatLng(google.loader.ClientLocation.latitude, google.loader.ClientLocation.longitude),

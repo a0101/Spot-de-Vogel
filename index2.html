@@ -6,22 +6,91 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+
+	<script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+	<script src="http://www.google.com/jsapi?key=ABQIAAAAahcO7noe62FuOIQacCQQ7RTHkUDJMJAZieEeKAqNDtpKxMhoFxQsdtJdv3FJ1dT3WugUNJb7xD-jsQ" type="text/javascript"></script>
+    <script type="text/javascript">
+		google.load("maps", "3", {'other_params':'sensor=true&libraries=geometry'});
+		google.load("jquery", "1.6.2");
+	</script>
+	<script type="text/javascript">
+		// Demonstration purpose only...
+		$(document).bind("mobileinit", function () {
+			$.mobile.ajaxEnabled  = true;
+		});
+	</script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+	<script type="text/javascript" src="jquery.ui.map.js"></script>
+	
+	
+	<script type="text/javascript">
+    	$('div').live('pageshow',function(event, ui){
+        	var vars = getUrlVars();
+        	if (vars.bird) {
+	        	// set the title
+	        	$('#bird_title').html(birds[vars.bird].name);
+	        	
+	        	// set the image
+	        	var img = $('#bird_image')
+	        	img.attr('src', 'photo/birds/' + birds[vars.bird].image);
+	        	img.attr('alt', birds[vars.bird].name);
+	        	
+	        	// set the description
+	        	$('#bird_description').html(birds[vars.bird].description);
+	        	
+	        	// set the links to the locations where the bird can be found
+	        	var div = $('#bird_locations');
+	        	div.html('');
+	        	birds[vars.bird].locations.forEach(function (location) {
+		        	div.append('<p><a href="location.html?location=' + location + '" data-role="button">' + locations[location].name + '</a></p>')
+	        	});
+        	} 
+        	else if (vars.location) {
+	        	// set the title
+	        	$('#location_title').html(locations[vars.location].name);
+	        	
+	        	// set the image
+	        	var img = $('#location_image')
+	        	img.attr('src', 'photo/locations/' + locations[vars.location].image);
+	        	img.attr('alt', locations[vars.location].name);
+	        	
+	        	// set the description
+	        	$('#location_description').html(locations[vars.location].description);
+	        	
+	        	// set the links to the locations where the location can be found
+	        	var div = $('#location_birds');
+	        	div.html('');
+	        	locations[vars.location].birds.forEach(function (bird) {
+		        	div.append('<p><a href="bird.html?bird=' + bird + '" data-role="button">' + birds[bird].name + '</a></p>')
+	        	});
+        	} 
+    	});
+    	
+    	function getUrlVars() {
+			var vars = {}, hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		}
+	</script>
 </head> 
 
 <body> 
 <div data-role="page" data-theme="b">
 <div  data-role="header" data-position="inline">
-	<a href="index.html" rel="external" data-icon="back">Back</a> 
+	<a href="" data-rel="back" data-icon="back">Back</a> 
 	<h1>Home</h1> 
 </div> 
 	<div data-role="content" style="background-color: #A9E2F3; background-image: none;">	
-		<p><a href="map.html" rel="external" data-role="button">Locate me now</a>
+		<p><a href="map.html" data-role="button">Locate me now</a>
 </p>		
 	<p><a href="index.html" rel="external" data-role="button">Popular Areas</a>
 </p>
-<p><a href="index.html" rel="external" data-role="button">My Favourite Birds</a>
+<p><a href="bird.html?bird=bontbekplevier" data-role="button">My Favourite Birds</a>
 </p>
 	</div><!-- /content -->
 
