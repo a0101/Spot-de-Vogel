@@ -1,84 +1,63 @@
 <!DOCTYPE html> 
 <html> 
-	<head> 
-	<title>Page Title</title> 
+	<head profile="http://dublincore.org/documents/dcq-html/">
+		<title>jQuery mobile with Google maps basic example</title>
+		
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.css" />
+
+		<script src="http://www.google.com/jsapi?key=ABQIAAAAahcO7noe62FuOIQacCQQ7RTHkUDJMJAZieEeKAqNDtpKxMhoFxQsdtJdv3FJ1dT3WugUNJb7xD-jsQ" type="text/javascript"></script>        
+        <script type="text/javascript">
+			google.load("maps", "3", {'other_params':'sensor=true&libraries=geometry'});
+			google.load("jquery", "1.5");
+		</script>
+		<script type="text/javascript">
+			// Demonstration purpose only...
+			$(document).bind("mobileinit", function () {
+				$.mobile.ajaxEnabled  = true;
+			});
+		</script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.js"></script>
+		<script type="text/javascript" src="jquery.ui.map.js"></script>
+	</head> 
+
+	<body> 
+		<div id="gmap-2" data-role="page">
+			<div data-role="header">
+				<h1><a data-ajax="false" href="/">jQuery mobile with Google maps</a> basics</h1>
+			</div>
+			<script type="text/javascript">
+				$('#gmap-2').live("pageshow", function() {
+					$('#map_canvas').gmap({'zoom': 8, 'center': getLatLng(), 'callback': function() {
+							$('#map_canvas').gmap('addMarker', {'position': getLatLng(), 'animation': google.maps.Animation.DROP, 'title': 'Jouw Locatie'}, function(map, marker) {
+								$('#map_canvas').gmap('addInfoWindow', { 'position':marker.getPosition(), 'content': 'Jouw Locatie' }, function(iw) { 
+									$(marker).click(function() { 
+											iw.open(map, marker); 
+											map.panTo(marker.getPosition()); 
+									}); 
+								}); 
+							});
+						}
+					});
+					function getLatLng() {
+						if ( google.loader.ClientLocation != null ) {
+console.log(
+	google.maps.geometry.spherical.computeDistanceBetween(
+		new google.maps.LatLng(google.loader.ClientLocation.latitude, google.loader.ClientLocation.longitude),
+		new google.maps.LatLng(59.3426606750, 18.0736160278)
+	)
+);
+							return new google.maps.LatLng(google.loader.ClientLocation.latitude, google.loader.ClientLocation.longitude);	
+						}
+						return new google.maps.LatLng(59.3426606750, 18.0736160278);
+					}
+				});
+			</script>
+			<div data-role="content"> 
+				<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
+					<div id="map_canvas" style="height:300px;"></div>
+				</div>			
+			</div>
+		</div>
+	</body>
 	
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
-
-<!--
-    Include the maps javascript with sensor=true because this code is using a
-    sensor (a GPS locator) to determine the user's location.
-    See: http://code.google.com/apis/maps/documentation/javascript/basics.html#SpecifyingSensor
-    --> 
-    <script type="text/javascript"
-        src="http://maps.googleapis.com/maps/api/js?sensor=true"></script> 
- 
-    <script type="text/javascript"> 
-      var map;
- 
-      function initialize() {
-        var myOptions = {
-          zoom: 6,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        map = new google.maps.Map(document.getElementById('map_canvas'),
-            myOptions);
- 
-        // Try HTML5 geolocation
-        if(navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = new google.maps.LatLng(position.coords.latitude,
-                                             position.coords.longitude);
- 
-            var infowindow = new google.maps.InfoWindow({
-              map: map,
-              position: pos,
-              content: 'Location found using HTML5.'
-            });
- 
-            map.setCenter(pos);
-          }, function() {
-            handleNoGeolocation(true);
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleNoGeolocation(false);
-        }
-      }
- 
-      function handleNoGeolocation(errorFlag) {
-        if (errorFlag) {
-          var content = 'Error: The Geolocation service failed.';
-        } else {
-          var content = 'Error: Your browser doesn\'t support geolocation.';
-        }
- 
-        var options = {
-          map: map,
-          position: new google.maps.LatLng(60, 105),
-          content: content
-        };
- 
-        var infowindow = new google.maps.InfoWindow(options);
-        map.setCenter(options.position);
-      }
- 
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-
-</head> 
-
-<body> 
-<div data-role="page" data-theme="b">
-
-	<div data-role="content" style="background-color: #A9E2F3; background-image: none;">	
-		<div id="map_canvas"></div>		
-	</div><!-- /content -->
-
-</div><!-- /page -->
-</body>
 </html>
