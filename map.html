@@ -25,11 +25,12 @@
 	<body> 
 		<div id="gmap-2" data-role="page">
 			<div data-role="header">
+			
 				<h1>De Spot de Vogel kaart</h1>
 			</div>
 			<script type="text/javascript">
 				$('#gmap-2').live("pageshow", function() {
-					$('#map_canvas').gmap({'zoom': 8, 'center': getLatLng(), 'callback': function() {
+					$('#map_canvas').gmap({'zoom': 7, 'center': new google.maps.LatLng(52.63228, 4.75081), 'callback': function() {
 							$('#map_canvas').gmap('addMarker', {'position': getLatLng(), 'animation': google.maps.Animation.DROP, 'title': 'Jouw Locatie'}, function(map, marker) {
 								$('#map_canvas').gmap('addInfoWindow', { 'position':marker.getPosition(), 'content': 'Jouw Locatie' }, function(iw) { 
 									$(marker).click(function() { 
