@@ -1,24 +1,24 @@
 <!DOCTYPE html> 
-<html> 
+<html manifest="cache.manifest"> 
 	<head profile="http://dublincore.org/documents/dcq-html/">
 		<title>Spot de Vogel kaart</title>
 		
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
+		<link rel="stylesheet" href="jquery.mobile-1.0b2.min.css" />
 
     	<script type="text/javascript" src="data.js"></script>
         <script type="text/javascript" src="data.js"></script>
     	<script src="http://www.google.com/jsapi?key=ABQIAAAAahcO7noe62FuOIQacCQQ7RTHkUDJMJAZieEeKAqNDtpKxMhoFxQsdtJdv3FJ1dT3WugUNJb7xD-jsQ" type="text/javascript"></script>
         <script type="text/javascript">
     		google.load("maps", "3", {'other_params':'sensor=true&libraries=geometry'});
-    		google.load("jquery", "1.6.2");
     	</script>
+    	<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
     	<script type="text/javascript">
     		// Demonstration purpose only...
     		$(document).bind("mobileinit", function () {
     			$.mobile.ajaxEnabled  = true;
     		});
     	</script>
-    	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+    	<script type="text/javascript" src="jquery.mobile-1.0b2.min.js"></script>
     	<script type="text/javascript" src="jquery.ui.map.js"></script>
 	</head> 
 

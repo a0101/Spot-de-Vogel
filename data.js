@@ -223,38 +223,12 @@ var birds = {
 		'description': "Visdieven zijn koloniegewijs broedende vogels van kustgebieden en visrijke wateren in het binnenland. Bij voorkeur wordt gebroed op eilandjes en andere voor grondpredatoren moeilijk bereikbare plaatsen met een vrijwel kale tot grazige bodem. Het voedsel bestaat bij voorkeur uit kleine rondvis, die meestal duikend bemachtigd wordt. Bij gebrek aan rondvis wordt overgeschakeld op kleine platvis, garnalen, kikkervisjes en dergelijke. Onze visdieven overwinteren langs de Westafrikaanse kust, van Mauretani‘ tot Nigeria.",
 		'locations': ['abtskolk']
 	},
-'wulp': {
+    'wulp': {
 		'name': "Wulp",
 		'image': "wulp.jpg",
 		'description': "In Nederland zijn wulpen het hele jaar aan te treffen. De vogel broedt in zowel open agrarisch gebied als in droge,open natuurgebieden. In de jaren 1980 steeg het aantal vogels dat broedde in agrarisch gebied en nam het aantal dat koos voor natuurgebieden af.",
 		'locations': ['abtskolk']
-	},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	}
 }
 
 var locations = {
@@ -266,77 +240,78 @@ var locations = {
 		'image': "duinen.jpg",
 		'birds': ['blauwe_kiekendief', 'bontbekplevier', 'bruinedief', 'dwergstern', 'eider', 'mantelmeeuw', 'lepelaar', 'roerdomp', 'roodborst','strandplevier', 'tapuit', 'velduil']
 	},
-'zwanen': {
+    'zwanen': {
 		'name': "Zwanenwater & Pettemerduinen",
 		'latitude': 52.8333901, 
 		'longitude': 4.6972176,
 		'description': "Dit gebied is een lang uitgestrekt duingebeid dat tot het kleine dorpje Petten loopt. In het gebied zijn twee zoete duinmeren te vinden die alemaal omringt zjin door rietland en moerassen. De meest voorkomende vogels in dit gebied zijn de aalsholver, koekoek en de dwerggans.",
         'image': "zwanen.jpeg",
         'birds': ['aalscholver', 'baardman', 'blauwborst', 'dwerggans', 'mantelmeeuw', 'kneu', 'koekoek', 'lepelaar', 'roerdomp', 'tapuit']
-	},
-'abstkolk': {
+    	},
+    'abstkolk': {
 		'name': "Abtskolk & Putten",
 		'latitude': 52.769606, 
 		'longitude': 4.6632525,
 		'description': "Het gebied bestaat overwegend uit grasland en plassen. Abtskolk is eigendom van en in beheer bij Staatsbosbeheer. De Putten is in beheer bij de Vereniging Natuurmonumenten. De meest voorkomende vogels in dit gebied zijn de Grote Stern en de Dwergstern, gevolg door de Goudplevier",
         'image': "abtskolk.jpeg",
 		'birds': ['bergeend', 'bontbek', 'strandloper', 'brandgans', 'goudplevier', 'dwerggans', 'dwergstern', 'grauwegans', 'grotestern', 'grutto', 'kanoet', 'kluut', 'kolgans', 'lachstern', 'noordsestern', 'slechtvalk', 'slobeend', 'smient', 'tureluur', 'visdief', 'wulp']
-},
-'eilands': {
+    },
+    'eilands': {
 		'name': "Eilandspolder",
 		'latitude': 52.5725728, 
 		'longitude': 4.7723593,
-		'description': "",
-        'image': "zwanen.jpeg",
+		'description': "De Eilandspolder is een laagveen-achtig natuurgebied in Noord-Holland in de gemeenten Schermer en Graft-De Rijp. Dit gebied ligt in het midden van Noord-Holland, ingeklemd tussen de droogmakerijen Beemster en Schermer. Dorpen in dit gebied zijn Graft, de Rijp, Oost- en Westgraftdijk, Noordeinde, Grootschermer, Driehuizen en Schermerhorn. Naar het zuiden toe sluit het bijna aan bij het Wormer- en Jisperveld, een gebied met vergelijkbaar karakter. Naar het noorden ligt de polder Mijzen, een min of meer vergelijkbaar gebied, dat echter nog vooral landbouwkundig in gebruik is.",
+        'image': "eilandspolder.jpeg",
 		'birds': []
-		},
-'zeevang': {
+	},
+    'zeevang': {
 		'name': "Polder Zeevang",
 		'latitude': 52.545, 
 		'longitude': 4.9808333,
-		'description': "",
-        'image': "zwanen.jpeg",
+		'description': "Polder Zeevang is een poldergebied dat gelegen is aan het Markermeer, ten noorden van de Noord-Hollandse plaatsen Edam en Purmerend. De trekvaart Zesstedenvaart en de Kromme IJe lopen door het gebied. De polder heeft een Natura 2000-status door overnachtende en foeragerende vogels. Het water in het gebied is brak, maar het water is zoeter geworden door de inpoldering van de Zuiderzee.",
+        'image': "polder_zeevang.jpeg",
 		'birds': []
 		},
-'wormer': {
+    'wormer': {
 		'name': "Wormer-en Jisperveld & Kalverpolder",
 		'latitude': 52.5294953, 
 		'longitude': 4.8382281,
-		'description': "",
-        'image': "zwanen.jpeg",
+		'description': "Wormer- en Jisperveld & Kalverpolder is de naam van een Natura 2000-gebied (classificatie:Meren en moerassen, nummer 90) in de Nederlandse provincie Noord-Holland. De laagveengebieden, waar ook veel weide- en hooiland voorkomt, zijn gelegen in de gemeenten Wormerland en Zaanstad. De oppervlakte van het Natura 2000-gebied is 1475 ha en wordt beheerd door Natuurmonumenten, Staatsbosbeheer en particulieren. Het gebied wordt gezien als een zeer belangrijk broedgebied voor broedvogels van natte graslanden (kemphaan) en belangrijk broedgebied voor broedvogels van rietmoerassen, zoals de roerdomp en rietzanger.",
+        'image': "Wormer.jpeg",
 		'birds': []
-		},				
-
-'ilper': {
+	},
+    'ilper': {
 		'name': "Ilperveld, Varkensland, Oostzanerveld & Twiske",
 		'latitude': 52.4388397, 
 		'longitude': 4.9510771,
-		'description': "",
-        'image': "zwanen.jpeg",
+		'description': "Ilperveld, Varkensland, Oostzanerveld & Twiske is de naam van een Natura 2000-gebied (nummer 92, landschapclassificatie Meren en moerassen) in de Nederlandse provincie Noord-Holland. De aanwijzing omvat een oppervlakte van 2584 ha verdeeld over de gemeenten Landsmeer, Oostzaan, Waterland, Wormerland en Zaanstad. Het Natura 2000-gebied bestaat uit het Ilperveld, Oostzanerveld en Varkensland ten noorden van Amsterdam. Samen vormen ze een groot uitgeveende laagveencomplex. De Stootersplas en Het Twiske behoren ook tot het gebied.",
+        'image': "ilperveld.jpeg",
 		'birds': []
-		},	
-'naarder': {
+	},	
+    'naarder': {
 		'name': "Naardermeer",
 		'latitude': 52.287546, 
 		'longitude': 5.1261305,
-		'description': "",
-        'image': "zwanen.jpeg",
+		'description': "Het Naardermeer is een beschermd natuurgebied in het Gooi, gelegen tussen Muiderberg, Naarden, Hilversumse Meent en Weesp. Het is een plassengebied met riet, hooiland en moerasbos. Het biedt plaats aan veel moerasplanten en -dieren, waaronder unieke zoals aalscholvers. Het was het eerste gebied dat de vereniging Natuurmonumenten na haar oprichting in 1906 aankocht om te beschermen. Het gebied is beperkt toegankelijk voor bezoekers; er zijn ook georganiseerde wandelingen en vaartochten.",
+        'image': "naardermeer.jpeg",
 		'birds': []
-		},	
-'vechtplassen': {
+	},	
+    'vechtplassen': {
 		'name': "Oostelijke Vechtplassen",
 		'latitude': 52.26215, 
 		'longitude': 5.047719,
-		'description': "",
-        'image': "zwanen.jpeg",
+		'description': "Oostelijke Vechtplassen is de naam van een Natura 2000-gebied, een ten behoeve van natuurbescherming aangewezen gebied. Het is geen historische of aardrijkskundige naam.
+Het Natura 2000-gebied Oostelijke Vechtplassen is opgenomen in het Europese systeem Natura 2000 als gebied nr 95, in de categorie Meren en moerassen. Het is aangewezen als Vogelrichtlijngebied en als Habitatrichtlijngebied. De beschermde natuurmonumenten Loosdrecht en Terra Nova horen (deels) tot het Natura 2000-gebied.",
+        'image': "vechtplassen.jpeg",
 		'birds': []
-		},
-'ijmeer': {
+	},
+    'ijmeer': {
 		'name': "Markermeer & IJmeer",
 		'latitude': 52.5427157, 
 		'longitude': 5.2745176,
-		'description': "",
-        'image': "zwanen.jpeg",
+		'description': "Het Markermeer is een 700 km2 groot meer gelegen tussen Noord-Holland, Flevoland en het Noordelijk IJsselmeer. Het meer is op de meeste plaatsen 2 tot 4 meter diep en is genoemd naar het schiereiland Marken, in het zuidwesten van het meer. De term Markermeer vloeit voort uit de geplande inpoldering van dit gebied tot Markerwaard, die inmiddels van de baan is.
+Het IJmeer is een randmeer in Nederland. Het ligt tussen de polder De Nes (gemeente Waterland), Pampushaven, de Hollandse Brug en de monding van het IJ bij IJburg, verdeeld over de provincies Noord-Holland en Flevoland. Het is een belangrijk rustgebied voor vogels. In noordoostelijke richting gaat het over in het Markermeer, in zuidoostelijke richting in het Gooimeer.",
+        'image': "ijmeer.jpeg",
 		'birds': []
-		},	
+	}
 }
